@@ -1,0 +1,13 @@
+# Config for sway
+#
+# Read `man 5 sway` for a complete reference.
+
+# user config directory
+include catppuccin-mocha
+
+include $HOME/.config/sway/config.d/*
+
+focus_follows_mouse no
+
+set $term /usr/bin/kitty
+set $term_cwd $term --working-directory "$(swaycwd 2>/dev/null || echo $HOME)"
