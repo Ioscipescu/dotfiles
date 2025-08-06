@@ -13,3 +13,10 @@ lspconfig.coq_lsp.setup({
   filetypes = { "coq" },
   root_dir = lspconfig.util.root_pattern("_CoqProject", "dune-project", ".git"),
 })
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+})
