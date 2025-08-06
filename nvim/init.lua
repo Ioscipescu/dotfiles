@@ -2,9 +2,6 @@
 require("config.lazy")
 require("snippets")
 
-vim.opt.spell = true
-vim.cmd("set spell syntax=off")
-
 vim.cmd("set clipboard=unnamedplus")
 
 local lspconfig = require("lspconfig")

@@ -1,6 +1,22 @@
 return {
   "barreiroleo/ltex_extra.nvim",
-  ft = { "markdown", "tex" },
+  ft = {
+    "bibtex",
+    "gitcommit",
+    "markdown",
+    "org",
+    "tex",
+    "restructuredtext",
+    "rsweave",
+    "latex",
+    "quarto",
+    "rmd",
+    "context",
+    "html",
+    "xhtml",
+    "mail",
+    "plaintext",
+  },
   dependencies = { "neovim/nvim-lspconfig" },
   config = function()
     -- Add a small delay or use autocmd to ensure LSP is attached
