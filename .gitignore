@@ -1,0 +1,11 @@
+*
+
+!nvim/
+!fish/
+!kitty/
+!sway/
+!nvim/*
+!fish/*
+!kitty/*
+!sway/*
+!.gitignore
