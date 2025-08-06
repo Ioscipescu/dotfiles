@@ -7,3 +7,4 @@ local map = LazyVim.safe_keymap_set
 map("i", "jj", "<Esc>", { desc = "Exit insert mode" })
 map("v", "<S-Tab>", "<gv")
 map("v", "<Tab>", ">gv")
+map("n", "<leader>w", ":w<CR>")
