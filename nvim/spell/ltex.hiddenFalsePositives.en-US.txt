@@ -1,0 +1,2 @@
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QCreating Kernels Kernels are functions added to C++ by CUDA that get executed \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q times in parallel instead of a single time serially like normal functions in C++ are.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QWhen copying data use \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q which copies data from the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q pointer to the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q pointer using the protocol in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (CPU GPU, GPU GPU, GPU CPU).\\E$"}

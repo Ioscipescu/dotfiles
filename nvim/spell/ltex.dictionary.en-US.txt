@@ -1,1 +1,6 @@
 Blount
+Blount
+CUDA
+SBatch
+SIMD
+deallocating
