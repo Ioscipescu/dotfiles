@@ -22,8 +22,8 @@ gaps inner 4
 gaps outer 0
 smart_gaps on
 
-# font
-font pango:monospace 11
+# # font
+# font nerd:monospace 11
 
 # mod key used for most binds
 # Mod1 = Alt
@@ -46,7 +46,7 @@ exec ~/.azotebg
 
 ### Turn off screen on lid closed
 set $laptop eDP-1
-bindswitch lid:on output $laptop disable
+bindswitch lid:on exec gtklock -f -c 000000 && output $laptop disable
 bindswitch lid:off output $laptop enable
 
 #############         Bindings           ##################
@@ -96,8 +96,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
 
 # backlight
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # Reload the configuration file
 bindsym $Mod+Shift+c reload
