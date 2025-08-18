@@ -29,3 +29,30 @@ require("neo-tree").setup({
     },
   },
 })
+
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "bibtex",
+    "gitcommit",
+    "markdown",
+    "org",
+    "tex",
+    "restructuredtext",
+    "rsweave",
+    "latex",
+    "quarto",
+    "rmd",
+    "context",
+    "html",
+    "xhtml",
+    "mail",
+    "plaintext",
+    "norg",
+  },
+  callback = function()
+    vim.opt_local.spell = false
+  end,
+})
