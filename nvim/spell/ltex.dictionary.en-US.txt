@@ -4,3 +4,6 @@ CUDA
 SBatch
 SIMD
 deallocating
+cuda-example
+short-gpu
+ntasks

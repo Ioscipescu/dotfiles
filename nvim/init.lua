@@ -11,6 +11,11 @@ lspconfig.coq_lsp.setup({
   root_dir = lspconfig.util.root_pattern("_CoqProject", "dune-project", ".git"),
 })
 
+lspconfig.zls.setup({
+  cmd = { "zls" },
+  filetypes = { "zig" },
+})
+
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
@@ -51,6 +56,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "mail",
     "plaintext",
     "norg",
+    "rst",
   },
   callback = function()
     vim.opt_local.spell = false

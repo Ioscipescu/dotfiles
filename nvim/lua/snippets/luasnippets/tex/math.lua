@@ -1,7 +1,7 @@
 -- [
 -- snip_env + autosnippets
 -- ]
-local ls = require "luasnip"
+local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
 local isn = ls.indent_snippet_node
@@ -11,9 +11,9 @@ local f = ls.function_node
 local c = ls.choice_node
 local d = ls.dynamic_node
 local r = ls.restore_node
-local events = require "luasnip.util.events"
-local ai = require "luasnip.nodes.absolute_indexer"
-local extras = require "luasnip.extras"
+local events = require("luasnip.util.events")
+local ai = require("luasnip.nodes.absolute_indexer")
+local extras = require("luasnip.extras")
 local l = extras.lambda
 local rep = extras.rep
 local p = extras.partial
@@ -22,9 +22,9 @@ local n = extras.nonempty
 local dl = extras.dynamic_lambda
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
-local conds = require "luasnip.extras.expand_conditions"
+local conds = require("luasnip.extras.expand_conditions")
 local postfix = require("luasnip.extras.postfix").postfix
-local types = require "luasnip.util.types"
+local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
@@ -32,7 +32,7 @@ local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" }
 -- [
 -- personal imports
 -- ]
-local tex = require "snippets.luasnippets.tex.utils.conditions"
+local tex = require("snippets.luasnippets.tex.utils.conditions")
 local line_begin = require("luasnip.extras.conditions.expand").line_begin
 
 -- Generating functions for Matrix/Cases - thanks L3MON4D3!
@@ -45,14 +45,14 @@ local generate_matrix = function(args, snip)
     table.insert(nodes, r(ins_indx, tostring(j) .. "x1", i(1)))
     ins_indx = ins_indx + 1
     for k = 2, cols do
-      table.insert(nodes, t " & ")
+      table.insert(nodes, t(" & "))
       table.insert(nodes, r(ins_indx, tostring(j) .. "x" .. tostring(k), i(1)))
       ins_indx = ins_indx + 1
     end
-    table.insert(nodes, t { "\\\\", "" })
+    table.insert(nodes, t({ "\\\\", "" }))
   end
   -- fix last node.
-  nodes[#nodes] = t "\\\\"
+  nodes[#nodes] = t("\\\\")
   return sn(nil, nodes)
 end
 
@@ -66,11 +66,11 @@ local generate_cases = function(args, snip)
     table.insert(nodes, r(ins_indx, tostring(j) .. "x1", i(1)))
     ins_indx = ins_indx + 1
     for k = 2, cols do
-      table.insert(nodes, t " & ")
+      table.insert(nodes, t(" & "))
       table.insert(nodes, r(ins_indx, tostring(j) .. "x" .. tostring(k), i(1)))
       ins_indx = ins_indx + 1
     end
-    table.insert(nodes, t { "\\\\", "" })
+    table.insert(nodes, t({ "\\\\", "" }))
   end
   -- fix last node.
   table.remove(nodes, #nodes)
@@ -83,7 +83,7 @@ M = {
     { trig = "mk", name = "$..$", dscr = "inline math" },
     fmta(
       [[
-    \(<>\)<>
+    $<>$<>
     ]],
       { i(1), i(0) }
     )
@@ -110,7 +110,7 @@ M = {
     <>
     \end{align<>}
     ]],
-      { c(1, { t "*", t "", t "ed" }), i(2), rep(1) }
+      { c(1, { t("*"), t(""), t("ed") }), i(2), rep(1) }
     ), -- in order of least-most used
     { condition = line_begin, show_condition = tex.show_line_begin }
   ),
@@ -121,7 +121,7 @@ M = {
       [[
     &<> <> \\
     ]],
-      { c(1, { t "=", t "\\leq", i(1) }), i(2) }
+      { c(1, { t("="), t("\\leq"), i(1) }), i(2) }
     ),
     { condition = tex.in_align, show_condition = tex.in_align }
   ),
@@ -134,7 +134,7 @@ M = {
     <>
     \end{gather<>}
     ]],
-      { c(1, { t "*", t "", t "ed" }), i(2), rep(1) }
+      { c(1, { t("*"), t(""), t("ed") }), i(2), rep(1) }
     ),
     { condition = line_begin, show_condition = tex.show_line_begin }
   ),
@@ -147,7 +147,7 @@ M = {
     <>
     \end{equation<>}
     ]],
-      { c(1, { t "*", t "" }), i(2), rep(1) }
+      { c(1, { t("*"), t("") }), i(2), rep(1) }
     ),
     { condition = line_begin, show_condition = tex.show_line_begin }
   ),
@@ -161,7 +161,9 @@ M = {
     <>
     \end{<>}]],
       {
-        f(function(_, snip) return snip.captures[1] .. "matrix" end),
+        f(function(_, snip)
+          return snip.captures[1] .. "matrix"
+        end),
         f(function(_, snip)
           if snip.captures[4] == "a" then
             out = string.rep("c", tonumber(snip.captures[3]) - 1)
@@ -170,7 +172,9 @@ M = {
           return ""
         end),
         d(1, generate_matrix),
-        f(function(_, snip) return snip.captures[1] .. "matrix" end),
+        f(function(_, snip)
+          return snip.captures[1] .. "matrix"
+        end),
       }
     ),
     { condition = tex.in_math, show_condition = tex.in_math }

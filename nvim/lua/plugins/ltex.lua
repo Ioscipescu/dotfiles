@@ -16,6 +16,8 @@ return {
     "xhtml",
     "mail",
     "plaintext",
+    "norg",
+    "rst",
   },
   dependencies = { "neovim/nvim-lspconfig" },
   config = function()
