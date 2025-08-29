@@ -7,3 +7,6 @@ deallocating
 cuda-example
 short-gpu
 ntasks
+iff
+Colab
+subcovering

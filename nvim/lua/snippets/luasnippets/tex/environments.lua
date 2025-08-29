@@ -1,7 +1,7 @@
 -- [
 -- snip_env + autosnippets
 -- ]
-local ls = require "luasnip"
+local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
 local isn = ls.indent_snippet_node
@@ -11,9 +11,9 @@ local f = ls.function_node
 local c = ls.choice_node
 local d = ls.dynamic_node
 local r = ls.restore_node
-local events = require "luasnip.util.events"
-local ai = require "luasnip.nodes.absolute_indexer"
-local extras = require "luasnip.extras"
+local events = require("luasnip.util.events")
+local ai = require("luasnip.nodes.absolute_indexer")
+local extras = require("luasnip.extras")
 local l = extras.lambda
 local rep = extras.rep
 local p = extras.partial
@@ -22,9 +22,9 @@ local n = extras.nonempty
 local dl = extras.dynamic_lambda
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
-local conds = require "luasnip.extras.expand_conditions"
+local conds = require("luasnip.extras.expand_conditions")
 local postfix = require("luasnip.extras.postfix").postfix
-local types = require "luasnip.util.types"
+local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" })
@@ -32,7 +32,7 @@ local autosnippet = ls.extend_decorator.apply(s, { snippetType = "autosnippet" }
 --[
 -- personal imports
 --]
-local tex = require "snippets.luasnippets.tex.utils.conditions"
+local tex = require("snippets.luasnippets.tex.utils.conditions")
 local make_condition = require("luasnip.extras.conditions").make_condition
 local in_bullets_cond = make_condition(tex.in_bullets)
 local line_begin = require("luasnip.extras.conditions.expand").line_begin
@@ -52,6 +52,27 @@ M = {
   ),
 
   s(
+    { trig = "doc", name = "start document", dscr = "Template the basics of a document:" },
+    fmta(
+      [[
+      \documentclass[11pt, letterpaper]{article}
+
+      \input{/home/ben/Documents/Latex/header}
+      \title{<>}
+
+      \begin{document}
+      \maketitle
+      
+      <>
+
+      \end{document}
+      ]],
+      { i(1), i(0) }
+    ),
+    { condition = tex.in_text, show_condition = tex.in_text }
+  ),
+
+  s(
     { trig = "-i", name = "itemize", dscr = "bullet points (itemize)" },
     fmta(
       [[ 
@@ -59,15 +80,20 @@ M = {
     \item <>
     \end{itemize}
     ]],
-      { c(1, { i(0), sn(
-        nil,
-        fmta(
-          [[
+      {
+        c(1, {
+          i(0),
+          sn(
+            nil,
+            fmta(
+              [[
         [<>] <>
         ]],
-          { i(1), i(0) }
-        )
-      ) }) }
+              { i(1), i(0) }
+            )
+          ),
+        }),
+      }
     ),
     { condition = tex.in_text, show_condition = tex.in_text }
   ),
@@ -82,30 +108,30 @@ M = {
     \end{enumerate}
     ]],
       {
-        c(
-          1,
-          {
-            t "",
-            sn(
-              nil,
-              fmta(
-                [[
+        c(1, {
+          t(""),
+          sn(
+            nil,
+            fmta(
+              [[
         [label=<>]
         ]],
-                { c(1, { t "(\\alph*)", t "(\\roman*)", i(1) }) }
-              )
-            ),
-          }
-        ),
-        c(2, { i(0), sn(
-          nil,
-          fmta(
-            [[
+              { c(1, { t("(\\alph*)"), t("(\\roman*)"), i(1) }) }
+            )
+          ),
+        }),
+        c(2, {
+          i(0),
+          sn(
+            nil,
+            fmta(
+              [[
         [<>] <>
         ]],
-            { i(1), i(0) }
-          )
-        ) }),
+              { i(1), i(0) }
+            )
+          ),
+        }),
       }
     ),
     { condition = tex.in_text, show_condition = tex.in_text }
@@ -114,7 +140,7 @@ M = {
   -- generate new bullet points
   autosnippet(
     { trig = "--", hidden = true },
-    { t "\\item" },
+    { t("\\item") },
     { condition = in_bullets_cond * line_begin, show_condition = in_bullets_cond * tex.show_line_begin }
   ),
   autosnippet(

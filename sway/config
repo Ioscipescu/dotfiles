@@ -47,7 +47,7 @@ exec ~/.azotebg
 ### Turn off screen on lid closed
 set $laptop eDP-1
 bindswitch lid:on exec gtklock -f -c 000000 && output $laptop disable
-bindswitch lid:off output $laptop enable
+bindswitch lid:off exec output $laptop enable && fix_mouse
 
 #############         Bindings           ##################
 
