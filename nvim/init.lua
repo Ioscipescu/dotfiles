@@ -62,3 +62,14 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = false
   end,
 })
+
+local original_handler = vim.lsp.handlers["$/progress"]
+vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+  local client = vim.lsp.get_client_by_id(ctx.client_id)
+  if client and client.name == "ltex" then
+    return
+  end
+  if original_handler then
+    original_handler(_, result, ctx)
+  end
+end

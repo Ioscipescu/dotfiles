@@ -8,3 +8,7 @@
 {"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QThen \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is not in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for some \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (because \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q's cover \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and are open).\\E$"}
 {"rule":"OUTSIDE_OF","sentence":"^\\QBut \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is outside of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"OUTSIDE_OF","sentence":"^\\QBut \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is outside of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, so not in \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"ADVERB_VERB_ADVERB_REPETITION","sentence":"^\\QSum of even is even, so sum of odd must also be even since sum of all is even.\\E$"}
+{"rule":"ADJECTIVE_IN_ATTRIBUTE","sentence":"^\\QThe orthographical symbols are twenty-five in number.\\E$"}
+{"rule":"ADJECTIVE_IN_ATTRIBUTE","sentence":"^\\QThere are five shelves for each of the hexagon's walls; each shelf contains thirty-five books of uniform format; each book is of four hundred and ten pages; each page, of forty lines, each line, of some eighty letters which are black in color.\\E$"}
+{"rule":"AFFORD_VBG","sentence":"^\\QThe policy of requiring a digit in each password does not increase security numerically, it decreases the number of possible passwords a user can choose making it easier to brute force due because of the smaller space of possible passwords.\\E$"}

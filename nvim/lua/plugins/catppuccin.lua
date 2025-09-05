@@ -4,8 +4,9 @@ return {
     name = "catppuccin",
     priority = 1000, -- load before other plugins
     lazy = false, -- load during startup
+    tag = "v1.10.0", -- https://github.com/LazyVim/LazyVim/issues/6355
     config = function()
-      require("catppuccin").setup {
+      require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
         transparent_background = true,
         integrations = {
@@ -19,8 +20,8 @@ return {
           notify = true,
           mini = true,
         },
-      }
-      vim.cmd.colorscheme "catppuccin"
+      })
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
