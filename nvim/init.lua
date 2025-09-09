@@ -1,6 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require("snippets")
+require("cmds.cmds")
 
 vim.cmd("set clipboard=unnamedplus")
 
@@ -14,6 +15,20 @@ lspconfig.coq_lsp.setup({
 lspconfig.zls.setup({
   cmd = { "zls" },
   filetypes = { "zig" },
+})
+
+require("lspconfig")["pyright"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    python = {
+      analysis = {
+        diagnosticSeverityOverrides = {
+          reportUnusedExpression = "none",
+        },
+      },
+    },
+  },
 })
 
 vim.diagnostic.config({

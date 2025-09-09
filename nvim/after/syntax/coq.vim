@@ -1,22 +1,38 @@
 setlocal conceallevel=2
 setlocal concealcursor=nc
 
+" Find more syntax groups with :syntax list
 syntax keyword coqKwd forall conceal cchar=∀
 syntax keyword coqKwd exists conceal cchar=∃
 syntax keyword coqKwd fun    conceal cchar=λ
-syntax match CoqArrow /->/ conceal cchar=→ containedin=ALL
+syntax keyword coqProofKwd forall conceal cchar=∀
+syntax keyword coqProofKwd exists conceal cchar=∃
+syntax keyword coqProofKwd fun    conceal cchar=λ
+syntax match CoqNeq /<>/ conceal cchar=≠ containedin=ALL
+syntax match CoqIffArrow /<->/ conceal cchar=⇔ containedin=ALL
+syntax match CoqArrow /[^<]\@<=->/ conceal cchar=→ containedin=ALL
+syntax match CoqBackArrow /<-/ conceal cchar=← containedin=ALL
 syntax match CoqDoubleArrow /=>/ conceal cchar=⇒ containedin=ALL
+syntax match CoqDoubleBackArrow /<=/ conceal cchar=⇐ containedin=ALL
 syntax match CoqAnd /\/\\/ conceal cchar=∧ containedin=ALL
 syntax match CoqOr /\\\// conceal cchar=∨ containedin=ALL
 syntax match CoqNot /~/ conceal cchar=¬ containedin=ALL
+syntax match CoqForAll /\<forall\>/ conceal cchar=∀ containedin=ALL
 syntax match CoqIn /\<In\>/ conceal cchar=∈
+syntax match CoqExists /\<exists\>/ conceal cchar=∃ containedin=ALL
 
+highlight default link CoqNew Keyword
+highlight default link CoqIffArrow Keyword
 highlight default link CoqArrow Keyword
+highlight default link CowBackArrow Keyword
 highlight default link CoqDoubleArrow Keyword
+highlight default link CoqDoubleBackArrow Keyword
 highlight default link CoqAnd Keyword
 highlight default link CoqOr Keyword
 highlight default link CoqNot Keyword
 highlight default link CoqIn Keyword
+highlight default link CoqForAll Keyword
+highlight default link CoqExists Keyword
 
 syntax clear coqComment
 
@@ -48,7 +64,7 @@ syntax match coqCommentHeader3 "^###\s.*$" contained containedin=coqComment
 highlight coqCommentHeader3 guifg=#87d7ff ctermfg=117 gui=italic cterm=italic
 
 syntax match coqCommentHashRun "#\{4,}" containedin=coqComment
-syntax match coqCommentHashRule "#" containedin=coqCommentHashRun conceal cchar=━
+syntax match coqCommentHashRule "#" containedin=coqCommentHashRun conceal cchar=▬
 syntax match coqCommentEqualRun "=\{4,}" containedin=coqComment
 syntax match coqCommentEqualRule "=" containedin=coqCommentEqualRun conceal cchar=─
 

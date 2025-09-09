@@ -12,3 +12,5 @@
 {"rule":"ADJECTIVE_IN_ATTRIBUTE","sentence":"^\\QThe orthographical symbols are twenty-five in number.\\E$"}
 {"rule":"ADJECTIVE_IN_ATTRIBUTE","sentence":"^\\QThere are five shelves for each of the hexagon's walls; each shelf contains thirty-five books of uniform format; each book is of four hundred and ten pages; each page, of forty lines, each line, of some eighty letters which are black in color.\\E$"}
 {"rule":"AFFORD_VBG","sentence":"^\\QThe policy of requiring a digit in each password does not increase security numerically, it decreases the number of possible passwords a user can choose making it easier to brute force due because of the smaller space of possible passwords.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qof \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (aa)(ab)(ac)(bb)(bc)(cc)\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QN X \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q arbitrary \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q injective Distinguishable Distinguishable \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Sets \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
