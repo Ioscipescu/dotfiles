@@ -1,7 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require("snippets")
-require("cmds.cmds")
 
 vim.cmd("set clipboard=unnamedplus")
 
@@ -10,11 +9,6 @@ lspconfig.coq_lsp.setup({
   cmd = { "coq-lsp" },
   filetypes = { "coq" },
   root_dir = lspconfig.util.root_pattern("_CoqProject", "dune-project", ".git"),
-})
-
-lspconfig.zls.setup({
-  cmd = { "zls" },
-  filetypes = { "zig" },
 })
 
 require("lspconfig")["pyright"].setup({
@@ -72,6 +66,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "plaintext",
     "norg",
     "rst",
+    "txt",
   },
   callback = function()
     vim.opt_local.spell = false

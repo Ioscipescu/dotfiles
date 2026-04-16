@@ -1,10 +1,10 @@
-local colors = require("catppuccin.palettes").get_palette "mocha"
+local colors = require("catppuccin.palettes").get_palette("mocha")
 
 return {
   "petertriho/nvim-scrollbar",
   event = "VeryLazy",
   config = function()
-    require("scrollbar").setup {
+    require("scrollbar").setup({
       handle = {
         color = colors.overlay0,
       },
@@ -16,6 +16,6 @@ return {
         Hint = { colors = colors.mauve },
         Misc = { colors = colors.lavender },
       },
-    }
+    })
   end,
 }
