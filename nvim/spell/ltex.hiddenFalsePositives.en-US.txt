@@ -14,3 +14,20 @@
 {"rule":"AFFORD_VBG","sentence":"^\\QThe policy of requiring a digit in each password does not increase security numerically, it decreases the number of possible passwords a user can choose making it easier to brute force due because of the smaller space of possible passwords.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qof \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (aa)(ab)(ac)(bb)(bc)(cc)\\E$"}
 {"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QN X \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q arbitrary \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q injective Distinguishable Distinguishable \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Sets \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QPython|tf.keras.layers.\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QBatchNormalization(scale=False, center=True)|\\E$"}
+{"rule":"LARGE_NUMBER_OF","sentence":"^\\QWe can use a large number of epochs with these models that have small data sizes.\\E$"}
+{"rule":"LOT_OF","sentence":"^\\QThere are a lot humans do not understand about brains and a lot that needs to be understood before ssuch a task is tackled and a lot more data that needs to be collected to train those models too.\\E$"}
+{"rule":"LOT_OF","sentence":"^\\QThere are a lot humans do not understand about brains and a lot that needs to be understood before such a task is tackled and a lot more data that needs to be collected to train those models too.\\E$"}
+{"rule":"EXTREME_ADJECTIVES","sentence":"^\\QThe paper does a really good job of explaining the evolution of deep learning models to a non expert but still somewhat informed audience.\\E$"}
+{"rule":"EXTREME_ADJECTIVES","sentence":"^\\QThe paper does a really good job of explaining the evolution of deep learning models to a non-expert but still somewhat informed audience.\\E$"}
+{"rule":"EXTREME_ADJECTIVES","sentence":"^\\QI think that this paper does a really good job at quickly summarizing big trends in the areas of deep learning and discussing partly why those trends happen.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe egf of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE","sentence":"^\\QFor one-to-one it cannot map into a lower dimension space.\\E$"}
+{"rule":"BEEN_PART_AGREEMENT","sentence":"^\\QIf \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is join irreducible we are done.\\E$"}
+{"rule":"BEEN_PART_AGREEMENT","sentence":"^\\QSince \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is join irreducible, one of the two terms equals \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QFrom Erdos-Ko-Rado\\E$"}
+{"rule":"ON_IN_THE_CORNER","sentence":"^\\QWe start at the top right corner of the staircase box at \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, end at \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and taking steps down and left.\\E$"}
+{"rule":"MANY_NN","sentence":"^\\QNew: Came to US between the 1880s and 1920s Mostly Austrian, Greek, Polish, Italian, Russian Many were Catholic or Jewish, came from poor and peasant backgrounds, settled in cities on the East Coast and worked factories, were unskilled, and very few spoke English\\E$"}
+{"rule":"PRP_NEW","sentence":"^\\QEven the freed slaves who were not caught up by Black Codes did not have the opportunity to exercise they new alledged rights.\\E$"}
+{"rule":"MISSING_GENITIVE","sentence":"^\\QMöbius inversion is to solve for \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

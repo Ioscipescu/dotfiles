@@ -12,8 +12,6 @@ return {
     "quarto",
     "rmd",
     "context",
-    "html",
-    "xhtml",
     "mail",
     "plaintext",
     "norg",

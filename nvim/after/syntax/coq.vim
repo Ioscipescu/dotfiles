@@ -17,6 +17,7 @@ syntax match CoqDoubleBackArrow /<=/ conceal cchar=⇐ containedin=ALL
 syntax match CoqAnd /\/\\/ conceal cchar=∧ containedin=ALL
 syntax match CoqOr /\\\// conceal cchar=∨ containedin=ALL
 syntax match CoqNot /~/ conceal cchar=¬ containedin=ALL
+syntax match CoqLambda  /\<Lambda\>/  conceal cchar=λ containedin=ALL
 syntax match CoqForAll /\<forall\>/ conceal cchar=∀ containedin=ALL
 syntax match CoqIn /\<In\>/ conceal cchar=∈
 syntax match CoqExists /\<exists\>/ conceal cchar=∃ containedin=ALL

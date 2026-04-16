@@ -12,3 +12,6 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # This section can be safely removed at any time if needed.
 test -r '/home/ben/.opam/opam-init/init.fish' && source '/home/ben/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
+
+# Created by `pipx` on 2026-03-14 04:08:40
+set PATH $PATH /home/ben/.local/bin

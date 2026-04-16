@@ -29,6 +29,7 @@ return {
 
     -- You can change <leader> if you want, but by default it's "\"
     vim.api.nvim_set_keymap("n", "<leader>ll", ":w | :VimtexCompile<CR>", opts)
+    vim.api.nvim_set_keymap("n", "<leader>lp", ":w | :VimtexCompile -pdf<CR>", opts)
     vim.api.nvim_set_keymap("n", "<leader>lv", ":VimtexView<CR>", opts)
     vim.api.nvim_set_keymap("n", "<leader>le", ":VimtexErrors<CR>", opts)
     vim.api.nvim_set_keymap("n", "<leader>lk", ":VimtexStop<CR>", opts)

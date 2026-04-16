@@ -79,8 +79,8 @@ end
 
 M = {
   -- Math modes
-  autosnippet(
-    { trig = "mk", name = "$..$", dscr = "inline math" },
+  s(
+    { trig = "mk", name = "$..$", dscr = "inline math", trigEngine = "plain" },
     fmta(
       [[
     $<>$<>
@@ -89,7 +89,7 @@ M = {
     )
   ),
 
-  autosnippet(
+  s(
     { trig = "dm", name = "\\[...\\]", dscr = "display math" },
     fmta(
       [[ 
@@ -102,7 +102,7 @@ M = {
     { condition = line_begin, show_condition = tex.show_line_begin }
   ),
 
-  autosnippet(
+  s(
     { trig = "ali", name = "align(|*|ed)", dscr = "align math" },
     fmta(
       [[ 
@@ -115,7 +115,7 @@ M = {
     { condition = line_begin, show_condition = tex.show_line_begin }
   ),
 
-  autosnippet(
+  s(
     { trig = "==", name = "&= align", dscr = "&= align" },
     fmta(
       [[
@@ -126,7 +126,7 @@ M = {
     { condition = tex.in_align, show_condition = tex.in_align }
   ),
 
-  autosnippet(
+  s(
     { trig = "gat", name = "gather(|*|ed)", dscr = "gather math" },
     fmta(
       [[ 
@@ -139,7 +139,7 @@ M = {
     { condition = line_begin, show_condition = tex.show_line_begin }
   ),
 
-  autosnippet(
+  s(
     { trig = "eqn", name = "equation(|*)", dscr = "equation math" },
     fmta(
       [[
